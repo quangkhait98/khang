@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <style>
+             input[type=text] {
+             width: 80px;
+             padding: 12px 20px;
+             margin: 8px 0;
+             box-sizing: border-box;
+			 
+             }
+			 input[type=submit] {
+             width: 100px;
+             background-color: blue;
+             color: white;
+             padding: 14px 20px;
+             margin: 8px 0;
+             border: none;
+             border-radius: 4px;
+             cursor: pointer;
+            }
+			 .div1{
+			  border:1px solid #ddd;
+			  border-radius:5px;
+			  margin:auto;
+			  width:300px;
+			  text-align:center;
+			 }
+			 .div2
+			 {
+			 width:100%;
+			 } 
+			 .ketqua{
+			 width:10px;
+			 height:10px;
+			 display:block;
+			 margin:auto;
+			 border:none;
+			 }
+	    </style>
+		<script type ="text/javascript">
+		            function GetValueA(){
+					   return document.getElementById('ValueA').value; 
+					}
+					function GetValueB(){
+					   return document.getElementById('ValueB').value; 
+					}
+				    function Tong(a,b){
+						return parseFloat(a) + parseFloat(b);
+					}
+					function Hieu(a,b){
+						return parseFloat(a) - parseFloat(b);
+					}
+					function Tich(a,b){
+						return parseFloat(a) * parseFloat(b);
+					}
+					function Thuong(a,b){
+						return parseFloat(a) / parseFloat(b);
+					}
+					function setResult(ValueAssign){
+					    document.getElementById('result').value = ValueAssign;
+					}
+	    </script>
+   </head>
+   <body>
+      <div class="div2">
+	      <div class="div1">
+	         <form  action="./tinhtoan"  method ="post">
+                  <input type="text" id="ValueA">
+                  <input type="text" id="ValueB">
+				  <input class="ketqua" type="text" id="result" name="result">
+				  <input type="submit" value=" + " onclick="setResult(Tong(GetValueA(),GetValueB()))"/>
+				  <input type="submit" value=" - " onclick="setResult(Hieu(GetValueA(),GetValueB()))"/>
+			      <input type="submit" value=" * " onclick="setResult(Tich(GetValueA(),GetValueB()))"/>
+			      <input type="submit" value=" / " onclick="setResult(Thuong(GetValueA(),GetValueB()))"/>
+			 </form>
+		  </div>
+	  </div>
+   </body>
+</html>
